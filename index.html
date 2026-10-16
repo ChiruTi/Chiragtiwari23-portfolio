@@ -131,6 +131,31 @@ body:before,body:after{display:none!important}
  .freelance-spotlight{padding:27px 24px}
 }
 @media(prefers-reduced-motion:reduce){.hero-grid>div:first-child{animation:none}.reveal{transition:none;opacity:1;transform:none}}
+
+/* Airier editorial layout: fewer framed panels */
+.stats{gap:26px}
+.stat{background:transparent;border:0;border-left:2px solid #7e8b9c;padding:12px 10px 12px 22px;min-height:0;border-radius:0}
+.stat:hover{transform:none;border-color:#baadea}
+.statbig{font-size:clamp(31px,3vw,44px)}
+.work{background:#1b2029}
+.grid{gap:0 30px}
+.card,.card:first-child{background:transparent;border:0;border-bottom:1px solid #4c5664;border-radius:0;min-height:275px;padding:30px 8px 29px;box-shadow:none}
+.card:first-child{grid-column:span 2}
+.card:hover{transform:none;box-shadow:none;border-color:#b7abeb;background:#ffffff04}
+.card h3,.card:first-child h3{margin:21px 0 12px}
+.chip{border:0;border-radius:0;padding:0;color:#b8afeb}
+.filter-btn{background:transparent;border-color:#596573}
+.filter-btn:hover{background:#ffffff0d}
+.freelance-spotlight{background:transparent;border:0;border-top:1px solid #55606e;border-bottom:1px solid #55606e;border-radius:0;padding:40px 0;margin-top:30px}
+.quote{background:transparent;border:0;border-left:3px solid #a99cdb;border-radius:0;padding:22px 0 22px 33px}
+.quote:before{display:none}
+.skill{background:transparent;border:0;border-bottom:1px solid #4f5968;border-radius:0;padding:11px 4px}
+.skill:hover{border-color:#c6b8f0}
+.contact{background:transparent;border:0;border-top:1px solid #536071;border-bottom:1px solid #536071;border-radius:0;padding:55px 12px}
+.section{padding:72px 0}
+.sectionhead{margin-bottom:22px}
+@media(max-width:900px){.grid{gap:0 22px}.section{padding:60px 0}}
+@media(max-width:650px){.grid{grid-template-columns:1fr}.card,.card:first-child{grid-column:auto;min-height:0;padding:26px 2px}.stats{gap:16px}.stat{padding-left:18px}.section{padding:50px 0}.freelance-spotlight{padding:30px 0}.contact{padding:40px 5px}}
 </style><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23090b11'/%3E%3Cpath d='M44 19a20 20 0 1 0 0 26' fill='none' stroke='%23b5a0ff' stroke-width='9' stroke-linecap='round'/%3E%3Ccircle cx='48' cy='15' r='4' fill='%239ae6df'/%3E%3C/svg%3E"/></head>
 <body>
 <header class="nav"><a class="logo" href="#top">chirag<span>.</span></a><nav id="navlinks" class="navlinks"><a href="#about">About</a><a href="#work">Projects</a><a href="#journey">Journey</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav><div style="display:flex;align-items:center;gap:10px"><a class="navbtn" href="#contact">Let's connect ↗</a><button class="menu" id="menu" aria-label="Toggle menu" aria-expanded="false">☰</button></div></header>
@@ -144,7 +169,7 @@ body:before,body:after{display:none!important}
 
 <section class="section" id="contact"><div class="wrap"><div class="contact reveal"><div class="kicker">05 / Let's talk</div><h2>Let's build something <span class="gradient">worth talking about.</span></h2><p>Have a project, collaboration, or opportunity in mind? Reach out directly. I'm always interested in thoughtful conversations about client experience, commercial operations and digital growth.</p><div class="contact-actions"><a class="btn primary" href="https://wa.me/919284387211?text=Hi%20Chiru%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer" aria-label="Let's connect on WhatsApp">Let's connect on WhatsApp ↗</a><a class="btn" href="mailto:crtiwari23@gmail.com?subject=Hello%20from%20your%20portfolio">Send an email ↗</a></div></div></div></section>
 </main>
-<dialog id="project-dialog" class="project-dialog" aria-labelledby="dialog-title"><div class="dialog-inner"><button type="button" class="dialog-close" aria-label="Close project details">×</button><div class="dialog-label" id="dialog-label"></div><h2 id="dialog-title"></h2><p id="dialog-description"></p><div class="dialog-outcome" id="dialog-outcome"></div></div></dialog><footer class="wrap footer"><span>© <span id="year">2026</span> Chirag Tiwari. Built with curiosity.</span><div class="links"><a href="#top">Back to top ↑</a><a href="#work">Selected work</a><a href="#contact">Contact</a></div></footer>
+<dialog id="project-dialog" class="project-dialog" aria-labelledby="dialog-title"><div class="dialog-inner"><button type="button" class="dialog-close" aria-label="Close project details">×</button><div class="dialog-label" id="dialog-label"></div><h2 id="dialog-title"></h2><p id="dialog-description"></p><div class="dialog-outcome" id="dialog-outcome"></div></div></dialog><footer class="wrap footer"><span>© <span id="year">2026</span> Chirag Tiwari.</span><div class="links"><a href="#top">Back to top ↑</a><a href="#work">Selected work</a><a href="#contact">Contact</a></div></footer>
 <script>
 const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:.1});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));const menu=document.getElementById('menu'),links=document.getElementById('navlinks');menu.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.textContent=open?'×':'☰'});links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰'}));document.getElementById('year').textContent=new Date().getFullYear();
 
